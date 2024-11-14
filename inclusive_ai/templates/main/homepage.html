@@ -1,0 +1,228 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'favicon/apple-touch-icon.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'favicon/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'favicon/favicon-16x16.png' %}">
+    <link rel="manifest" href="{% static 'favicon/site.webmanifest' %}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Филин AI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Manrope', sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        header {
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 80px;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .header-left {
+            display: flex;
+            align-items: center;
+            height: 100%;
+        }
+        .header-left img {
+            height: 40px;
+            margin-right: 1rem;
+        }
+        .header-right {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            height: 100%;
+        }
+        .fullpage-block {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+        .initiative {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+        .initiative img {
+            width: 60%;
+            object-fit: cover;
+            margin-bottom: 1rem;
+            border-radius: 18px;
+        }
+        h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: .3px;
+        }
+        h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            line-height: 130%;
+            font-weight: 900;
+            letter-spacing: 1px;
+        }
+        p {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+        }
+        .btn {
+            display: inline-block;
+            background-color: #4CAF50;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            margin-top: 1rem;
+            transition: background-color 0.3s;
+        }
+        .btn:hover {
+            background-color: #45a049;
+        }
+        .btn-secondary {
+            background-color: #ffffff;
+            color: #4CAF50;
+            border: 1px solid #4CAF50;
+        }
+        .btn-secondary:hover {
+            background-color: #f0f0f0;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+        }
+        .project-logo {
+            max-width: 200px;
+            margin-bottom: 2rem;
+        }
+        .abstract-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            opacity: 0.05;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-left">
+            <img src="{% static 'img/logo-bg.png' %}" alt="Филин AI Logo" style="height: 45px; width: 45px; border-radius: 4px;">
+            <h1 style="margin: 0;">Филин AI</h1>
+        </div>
+        <div class="header-right">
+            <a href="{% url 'users:login' %}" class="btn btn-secondary" style="margin-top: 0;">Войти</a>
+            <a href="{% url 'users:register' %}" class="btn" style="margin-top: 0;">Регистрация</a>
+        </div>
+    </header>
+
+    <div class="fullpage-block" style="background-color: #ffffff; height: calc(100vh - 80px);">
+        <svg class="abstract-bg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="20" cy="20" r="20" fill="#4CAF50" opacity="0.1" />
+            <circle cx="80" cy="80" r="30" fill="#4CAF50" opacity="0.1" />
+            <path d="M0,50 Q50,0 100,50 T0,50" fill="none" stroke="#4CAF50" stroke-width="0.5" />
+            <rect x="40" y="40" width="20" height="20" fill="#4CAF50" opacity="0.1" />
+            <ellipse cx="50" cy="50" rx="40" ry="20" fill="none" stroke="#4CAF50" stroke-width="0.5" />
+        </svg>
+        <img src="{% static 'img/logo.png' %}" alt="Филин AI Project Logo" class="project-logo">
+        <h2>Инновационное образование<br>для детей дошкольного возраста</h2>
+        <p>Добро пожаловать в мир Филин AI, где обучение становится увлекательным приключением!</p>
+        <a href="{% url 'initiatives' %}" class="btn" style="z-index: 100;">Перейти на платформу</a>
+    </div>
+
+    <div class="fullpage-block" style="background-color: #E8F5E9;">
+        <svg class="abstract-bg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <rect x="10" y="10" width="80" height="80" fill="#4CAF50" opacity="0.1" />
+            <rect x="30" y="30" width="40" height="40" fill="#4CAF50" opacity="0.1" />
+            <line x1="0" y1="0" x2="100" y2="100" stroke="#4CAF50" stroke-width="0.5" />
+            <circle cx="50" cy="50" r="25" fill="none" stroke="#4CAF50" stroke-width="0.5" />
+            <path d="M20,50 Q50,20 80,50 T20,50" fill="none" stroke="#4CAF50" stroke-width="0.5" />
+        </svg>
+        <div class="initiative">
+            <img src="{% static 'img/img-qa.png' %}" alt="Вопрос-ответ">
+            <h2>Вопрос-ответ</h2>
+            <p>Наш ИИ готов ответить на любые вопросы ваших детей, помогая им узнавать мир вокруг себя. Система адаптируется к возрасту ребенка, предоставляя понятные и увлекательные ответы, которые стимулируют дальнейшее любопытство и обучение. От простых "почему небо голубое?" до сложных вопросов о природе и технологиях - мы готовы помочь в развитии вашего ребенка.</p>
+            <a href="{% url 'initiatives' %}" class="btn">Перейти на платформу</a>
+        </div>
+    </div>
+
+    <div class="fullpage-block" style="background-color: #ffffff;">
+        <svg class="abstract-bg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <polygon points="50,10 10,90 90,90" fill="#4CAF50" opacity="0.1" />
+            <polygon points="50,30 25,70 75,70" fill="#4CAF50" opacity="0.1" />
+            <circle cx="50" cy="50" r="25" fill="none" stroke="#4CAF50" stroke-width="0.5" />
+            <line x1="0" y1="50" x2="100" y2="50" stroke="#4CAF50" stroke-width="0.5" />
+            <path d="M25,25 Q50,0 75,25 T25,25" fill="none" stroke="#4CAF50" stroke-width="0.5" />
+        </svg>
+        <div class="initiative">
+            <img src="{% static 'img/img-plan.png' %}" alt="Индивидуальный план">
+            <h2>Индивидуальный план</h2>
+            <p>Мы создаем персонализированные планы обучения, учитывающие уникальные потребности и интересы каждого ребенка. Наша система анализирует сильные стороны, предпочтения и темп обучения вашего ребенка, чтобы создать оптимальную программу развития. План включает разнообразные активности, игры и задания, которые помогут ребенку развиваться гармонично во всех ключевых областях: когнитивной, социальной, эмоциональной и физической.</p>
+            <a href="{% url 'initiatives' %}" class="btn">Перейти на платформу</a>
+        </div>
+    </div>
+
+    <div class="fullpage-block" style="background-color: #E8F5E9;">
+        <svg class="abstract-bg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <ellipse cx="50" cy="50" rx="45" ry="25" fill="#4CAF50" opacity="0.1" />
+            <ellipse cx="50" cy="50" rx="35" ry="15" fill="#4CAF50" opacity="0.1" />
+            <path d="M10,90 Q50,10 90,90" fill="none" stroke="#4CAF50" stroke-width="0.5" />
+            <rect x="25" y="25" width="50" height="50" fill="none" stroke="#4CAF50" stroke-width="0.5" />
+            <circle cx="50" cy="50" r="10" fill="#4CAF50" opacity="0.1" />
+        </svg>
+        <div class="initiative">
+            <img src="{% static 'img/img-book.png' %}" alt="Обучающие сказки">
+            <h2>Обучающие сказки</h2>
+            <p>Наши увлекательные сказки не только развлекают, но и обучают детей важным жизненным навыкам и ценностям. Каждая сказка разработана с учетом возраста ребенка и содержит интерактивные элементы, которые помогают лучше усвоить материал. Через захватывающие истории дети узнают о дружбе, честности, смелости, экологии и многом другом. Родители могут участвовать в процессе, обсуждая с детьми прочитанное и помогая применить полученные знания в реальной жизни.</p>
+            <a href="{% url 'initiatives' %}" class="btn">Перейти на платформу</a>
+        </div>
+    </div>
+
+    <div class="fullpage-block" style="background-color: #ffffff;">
+        <svg class="abstract-bg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <path d="M10,10 Q50,10 90,50 T10,90" fill="#4CAF50" opacity="0.1" />
+            <path d="M30,30 Q50,30 70,50 T30,70" fill="#4CAF50" opacity="0.1" />
+            <rect x="25" y="25" width="50" height="50" fill="none" stroke="#4CAF50" stroke-width="0.5" />
+            <circle cx="50" cy="50" r="30" fill="none" stroke="#4CAF50" stroke-width="0.5" />
+            <line x1="20" y1="20" x2="80" y2="80" stroke="#4CAF50" stroke-width="0.5" />
+        </svg>
+        <div class="initiative">
+            <img src="{% static 'img/img-watch.png' %}" alt="Браслет">
+            <h2>Браслет</h2>
+            <p>Наш инновационный браслет делает процесс обучения увлекательным и доступным в любое время. Это не просто гаджет, а настоящий образовательный компаньон для вашего ребенка. Браслет содержит множество обучающих игр, головоломок и заданий, которые адаптируются к уровню знаний ребенка. Он также отслеживает физическую активность, напоминает о необходимости отдыха и может использоваться для связи с родителями. С нашим браслетом обучение становится частью повседневной жизни, помогая ребенку развиваться играючи.</p>
+            <a href="{% url 'initiatives' %}" class="btn">Оформить предзаказ</a>
+        </div>
+    </div>
+</body>
+</html>
